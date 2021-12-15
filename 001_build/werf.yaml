@@ -1,0 +1,6 @@
+project: werf-habr-app
+configVersion: 1
+
+---
+image: app
+dockerfile: Dockerfile

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: werf-habr-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: werf-habr-app
+  template:
+    metadata:
+      labels:
+        app: werf-habr-app
+    spec:
+      imagePullSecrets:
+      - name: registrysecret
+      containers:
+      - name: app
+        image: {{ .Values.werf.image.app }}
+        command: ["/app/hello.sh"]
+        ports:
+        - containerPort: 8000
