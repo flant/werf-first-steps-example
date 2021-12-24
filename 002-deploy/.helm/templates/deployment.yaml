@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: werf-habr-app
+  name: werf-first-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: werf-habr-app
+      app: werf-first-app
   template:
     metadata:
       labels:
-        app: werf-habr-app
+        app: werf-first-app
     spec:
       imagePullSecrets:
       - name: registrysecret
